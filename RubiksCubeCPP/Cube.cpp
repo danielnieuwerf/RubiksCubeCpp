@@ -1,5 +1,6 @@
 #include "Cube.h"
 
+// Constructors
 Cube::Cube() {
 	// initialise cube to solved state
 	vector<char> line{};
@@ -27,6 +28,30 @@ Cube::Cube() {
 
 }
 
+Cube::Cube(vector<vector<char>> t, vector<vector<char>> b, vector<vector<char>> n, vector<vector<char>> w, vector<vector<char>> s, vector<vector<char>> e){
+	top = t;
+	bottom = b;
+	north = n;
+	west = w;
+	east = e;
+	south = s;
+}
+
+// Operator overloading
+bool Cube::operator==(Cube cube) {
+	return top == cube.top && bottom == cube.bottom && south == cube.south && north == cube.north && west == cube.west && east == cube.east;
+}
+
+void Cube::operator=(Cube cube) {
+	top = cube.top;
+	bottom = cube.bottom;
+	south = cube.south;
+	north = cube.north;
+	west = cube.west;
+	east = cube.east;
+}
+
+// Helper functions
 void Cube::print() {
 	string t{};
 	string b{};
@@ -506,11 +531,4 @@ void Cube::scramble(int num_moves) {
 	}
 }
 
-void Cube::solve_cube_with_hillclimbing() {
-	return;
-}
 
-void Cube::solve_cube_with_hillclimbing_backwards() {
-	// Start with a solved cube and work towards the initial state of the unsolved cube
-	return;
-}

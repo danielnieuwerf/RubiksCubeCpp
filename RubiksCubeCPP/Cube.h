@@ -35,9 +35,14 @@ public:
 	void rotate_face(char face, bool clockwise);
 	void print();
 	int distance_from_completion();
-	void solve_cube_with_hillclimbing();
-	void solve_cube_with_hillclimbing_backwards();
-	// Constructor
+
+	// Constructors
 	Cube();
+	Cube(vector<vector<char>> t, vector<vector<char>> b, vector<vector<char>> n, vector<vector<char>> w, vector<vector<char>> s, vector<vector<char>> e);
+
+	// Operator overloading
+	bool operator==(Cube cube);
+	void operator=(Cube cube);
+
 };
 
