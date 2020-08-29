@@ -495,7 +495,7 @@ void Cube::move(char initial_face, char destination_face, int index_x, int index
 }
 
 void Cube::scramble(int num_moves) {
-	// Makes a sequence of random moves to scramble the cube.
+	// Makes a sequence of num_moves random moves to scramble the cube.
 	srand(time(0));
 	if (num_moves < 1)
 		return;
